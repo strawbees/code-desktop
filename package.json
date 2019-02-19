@@ -1,0 +1,15 @@
+{
+  "name": "code-desktop",
+  "version": "0.1.0",
+  "description": "Desktop application for Strawbees CODE",
+  "main": "index.js",
+  "scripts": {
+    "build": "strawbees-desktop-packager prepare",
+    "start": "src/node_modules/.bin/nw src"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "desktop-packager": "git://github.com/strawbees/desktop-packager.git#feature/create-api",
+    "strawbees-code": "git://github.com/strawbees/code-ui.git#feature/prebuild"
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"name": "strawbeescode",
+	"version": "0.1.0",
+	"display-name": "Strawbees CODE",
+	"executable-name": "Strawbees CODE",
+	"publisher": "Strawbees AB",
+	"url-scheme": "strawbeescode",
+	"nwjs-version": "0.34.4",
+	"description": "",
+	"autoupdate": {
+		"stage": "https://s3.amazonaws.com/strawbees-downloads-stage/code-nwjs-build/versions",
+		"prodcution": "https://s3.amazonaws.com/strawbees-downloads-production/code-nwjs-build/versions",
+		"dev": "http://localhost:8080/"
+	},
+	"main": "ui/index.html",
+	"dependencies": {
+		"nw": "^0.36.2"
+	},
+	"window": {
+		"title": "Strawbees CODE",
+		"toolbar": true,
+		"frame": true,
+		"width": 1100,
+		"height": 550,
+		"min_width": 700,
+		"min_height": 400,
+		"icon": "nwjs-assets/icon.png"
+	}
+}
