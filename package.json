@@ -8,7 +8,9 @@
     "install-src": "cd src && npm install",
     "move-ui-stage": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_stage/ui -o ./src/ui",
     "move-ui-production": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_production/ui -o ./src/ui",
-    "build": "strawbees-desktop-packager-prepare",
+    "bundle": "strawbees-desktop-packager-bundle",
+    "package": "strawbees-desktop-packager-package",
+    "prepare": "strawbees-desktop-packager-prepare",
     "start": "cd src && npm start"
   },
   "license": "MIT",
