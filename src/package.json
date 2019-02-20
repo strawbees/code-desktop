@@ -27,5 +27,8 @@
 		"min_width": 700,
 		"min_height": 400,
 		"icon": "nwjs-assets/icon.png"
+	},
+	"scripts": {
+		"start": "nw ."
 	}
 }
