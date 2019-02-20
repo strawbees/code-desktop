@@ -10,7 +10,7 @@
     "move-ui-production": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_production/ui -o ./src/ui",
     "bundle": "strawbees-desktop-packager-bundle",
     "package": "strawbees-desktop-packager-package",
-    "prepare": "strawbees-desktop-packager-prepare",
+    "build": "npm run bundle && npm run package",
     "start": "cd src && npm start"
   },
   "license": "MIT",
