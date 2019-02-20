@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "desktop-packager": "git://github.com/strawbees/desktop-packager.git#feature/create-api",
-    "strawbees-code": "git://github.com/strawbees/code-ui.git#feature/prebuild"
+    "@strawbees/desktop-packager": "git://github.com/strawbees/desktop-packager.git#feature/create-api",
+    "@strawbees/strawbees-code": "git://github.com/strawbees/code-ui.git#develop"
   }
 }
