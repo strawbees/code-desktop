@@ -4,6 +4,13 @@
   "description": "Desktop application for Strawbees CODE",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run install-src",
+    "install-src": "cd src && npm install",
+    "clean-ui": "rm -rf ./src/ui",
+    "premove-ui-stage": "npm run clean-ui",
+    "move-ui-stage": "cp -r ./node_modules/@strawbees/code-ui/out/desktop_stage/ui ./src",
+    "premove-ui-production": "npm run clean-ui",
+    "move-ui-production": "cp -r ./node_modules/@strawbees/code-ui/out/desktop_production/ui ./src",
     "build": "strawbees-desktop-packager prepare",
     "start": "src/node_modules/.bin/nw src"
   },
