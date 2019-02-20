@@ -12,25 +12,25 @@ Check [releases](https://github.com/strawbees/code-desktop/releases) for the lat
 
 ## Running from source
 
-To run the app from the source code, install the npm dependencies both on the root of this repository and on the `src` folder before running `npm start`:
+To run the app from the source code, the npm dependencies must be installed both on the root of this repository and on the `src` folder. This process is automated by the `postinstall` script.
+
+The last step is to move which UI the app should load and it can be done with `npm run move-ui-stage` or `npm run move-ui-production`.
+
+Finally run `npm start` to run the app.
 
 ```bash
-npm install
-cd src
-npm install --nwjs_build_type=sdk # this will install the sdk version
-cd ..
+npm install --nwjs_build_type=sdk
+npm run move-ui-stage
 npm start
 ```
 
 ## Building
 
-Make sure you have removed all the `node_modules` from the root and `src` folder and install the dependencies again but specifying the environment you are building for. For example to build for `production`:
+Make sure you have removed the folders `node_modules` and `src/node_modules` and install the dependencies again but specifying the environment you are building for:
 
 ```bash
-npm install --production
-cd src
-npm install --nwjs_build_type=normal # this will install the normal version
-cd ..
+npm install --production --nwjs_build_type=normal
+npm run move-ui-production
 npm build
 ```
 
