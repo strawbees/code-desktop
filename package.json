@@ -1,6 +1,6 @@
 {
   "name": "code-desktop",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "Desktop application for Strawbees CODE",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,11 @@
     "bundle": "strawbees-desktop-packager-bundle",
     "package": "strawbees-desktop-packager-package",
     "build": "npm run bundle && npm run package",
-    "start": "cd src && npm start"
+    "start": "nw src"
   },
   "license": "MIT",
   "dependencies": {
+    "nw": "0.34.4",
     "@strawbees/desktop-packager": "git://github.com/strawbees/desktop-packager.git#feature/create-api",
     "@strawbees/code-ui": "git://github.com/strawbees/code-ui.git#develop"
   }

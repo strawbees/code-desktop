@@ -15,7 +15,6 @@
 	"main": "ui/index.html",
 	"node-main": "main.js",
 	"dependencies": {
-		"nw": "^0.36.2",
 		"@strawbees/desktop-autoupdater": "git+https://github.com/strawbees/desktop-autoupdater.git#develop"
 	},
 	"window": {
