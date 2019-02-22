@@ -5,6 +5,12 @@ process.on('SIGHUP', () => process.exit())
 process.on('SIGINT', () => process.exit()) // catch ctrl-c
 process.on('SIGTERM', () => process.exit()) // catch kill
 
+/**
+ * Display a popup notification saying there is an update available. It returns
+ * a promise that resolves if notification is clicked and rejects after a
+ * timout or if notification is closed
+ * @retur {Promise}
+ */
 const showNotification = async () => {
 	return new Promise((resolve, reject) => {
 		const options = {
@@ -43,9 +49,12 @@ updater.addListener('ready-to-restart', () => {
 	console.log('App is ready to restart')
 	nw.App.quit()
 })
-updater.addListener('update-available', () => {
+updater.addListener('update-available', async () => {
 	console.log('Update Available')
-	showNotification()
+	await showNotification()
+	// If notification is clicked, prepare to restart and quit app
+	await updater.prepareToRestart()
+	nw.App.quit()
 })
 updater.addListener('error', (err) => {
 	console.error('Updater error:', err)
