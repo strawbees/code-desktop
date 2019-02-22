@@ -1,22 +1,22 @@
 {
-  "name": "code-desktop",
-  "version": "2.0.0",
-  "description": "Desktop application for Strawbees CODE",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "npm run install-src",
-    "install-src": "cd src && npm install",
-    "move-ui-stage": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_stage/ui -o ./src/ui",
-    "move-ui-production": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_production/ui -o ./src/ui",
-    "bundle": "strawbees-desktop-packager-bundle",
-    "package": "strawbees-desktop-packager-package",
-    "build": "npm run bundle && npm run package",
-    "start": "nw src"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "nw": "0.34.4",
-    "@strawbees/desktop-packager": "git://github.com/strawbees/desktop-packager.git#feature/create-api",
-    "@strawbees/code-ui": "git://github.com/strawbees/code-ui.git#develop"
-  }
+    "name": "code-desktop",
+    "version": "2.0.0",
+    "description": "Desktop application for Strawbees CODE",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "npm run install-src",
+        "install-src": "cd src && npm install",
+        "move-ui-stage": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_stage/ui -o ./src/ui",
+        "move-ui-production": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_production/ui -o ./src/ui",
+        "bundle": "strawbees-desktop-packager-bundle",
+        "package": "strawbees-desktop-packager-package",
+        "build": "npm run bundle && npm run package",
+        "start": "nw src"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@strawbees/code-ui": "^1.3.14-prerelease.2",
+        "@strawbees/desktop-packager": "https://github.com/strawbees/desktop-packager.git#feature/create-api",
+        "nw": "0.34.4-sdk"
+    }
 }
