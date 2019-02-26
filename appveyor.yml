@@ -1,0 +1,46 @@
+environment:
+  nodejs_version: 11.0.0
+
+platform:
+  - x86
+  - x64
+
+install:
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - cinst -y nsis
+  - SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
+  - npm ci --only=production
+
+# defined specific build configs for different branches
+for:
+-
+  branches:
+    only:
+      - master
+  environment:
+    NODE_ENV: production
+  build_script:
+    - cmd: npm config set production
+    - cmd: npm install
+    - cmd: npm run move-ui-production
+    - cmd: npm run bundle
+    - cmd: npm run package
+-
+  branches:
+    only:
+      - develop
+  environment:
+    NODE_ENV: stage
+  build_script:
+    - cmd: npm install
+    - cmd: npm run move-ui-stage
+    - cmd: npm run bundle
+    - cmd: npm run package
+
+artifacts:
+  - path: dist\versions\**\*
+    name: build
+
+version: "{build}"
+
+skip_tags: true
