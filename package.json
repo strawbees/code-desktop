@@ -15,7 +15,7 @@
     "license": "MIT",
     "dependencies": {
         "@strawbees/code-ui": "^1.3.14-prerelease.2",
-        "@strawbees/desktop-packager": "https://github.com/strawbees/desktop-packager.git#release/0.1.0",
+        "@strawbees/desktop-packager": "^0.1.0",
         "nw": "0.34.4-sdk"
     }
 }

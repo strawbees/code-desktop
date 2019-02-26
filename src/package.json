@@ -16,7 +16,7 @@
 	"node-main": "main.js",
 	"inject_js_start": "inject_js_start.js",
 	"dependencies": {
-		"@strawbees/desktop-autoupdater": "https://github.com/strawbees/desktop-autoupdater.git#release/0.1.0",
+		"@strawbees/desktop-autoupdater": "^0.1.0",
 		"strawbees-code-compiler-service": "1.0.1"
 	},
 	"window": {
