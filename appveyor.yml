@@ -36,6 +36,17 @@ for:
     - cmd: npm run move-ui-stage
     - cmd: npm run bundle
     - cmd: npm run package
+-
+  branches:
+    only:
+      - /feature*/
+  environment:
+    NODE_ENV: stage
+  build_script:
+    - cmd: npm install
+    - cmd: npm run move-ui-stage
+    - cmd: npm run bundle
+    - cmd: npm run package
 
 artifacts:
   - path: dist\versions\**\*
