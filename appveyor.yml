@@ -38,6 +38,7 @@ for:
       - cmd: cd ..
       - cmd: npm ci --production
   build_script:
+    - cmd: set CONFIG=web_stage
     - cmd: npm run build-ui
     - cmd: npm run move-ui-develop
     - cmd: npm run bundle
