@@ -7,9 +7,9 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - cinst -y nsis
-  - SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
-  - npm ci --only=production
+  - cmd: cinst -y nsis
+  - cmd: SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
+  - cmd: npm ci --only=production
 
 # defined specific build configs for different branches
 for:
@@ -19,8 +19,6 @@ for:
       - master
   environment:
     NODE_ENV: production
-  install:
-    - cmd: npm ci --production
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
@@ -29,29 +27,21 @@ for:
   branches:
     only:
       - develop
-  environment:
-    NODE_ENV: stage
-  install:
-      - cmd: git clone --single-branch --branch develop https://github.com/strawbees/code-ui.git
-      - cmd: cd code-ui
-      - cmd: npm link
-      - cmd: cd ..
-      - cmd: npm ci --production
-  build_script:
-    - cmd: set CONFIG=web_stage
-    - cmd: npm run build-ui
-    - cmd: npm run move-ui-develop
-    - cmd: npm run bundle
-    - cmd: npm run package
--
-  branches:
-    only:
       - /feature*/
   environment:
     NODE_ENV: stage
-  build_script:
+  before_build:
+    - cmd: git clone https://github.com/strawbees/code-ui.git
+    - cmd: cd code-ui
+    - cmd: git checkout develop
     - cmd: npm install
-    - cmd: npm run move-ui-stage
+    - cmd: npm link
+    - cmd: cd %APPVEYOR_BUILD_FOLDER%
+    - cmd: npm link "@strawbees/code-ui"
+  build_script:
+    - cmd: set CONFIG=desktop_stage
+    - cmd: npm run build-ui
+    - cmd: npm run move-ui-develop
     - cmd: npm run bundle
     - cmd: npm run package
 
