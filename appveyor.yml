@@ -5,11 +5,10 @@ platform:
   - x86
   - x64
 
-install:
+init:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - cmd: cinst -y nsis
   - cmd: SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
-  - cmd: npm ci --only=production
 
 # defined specific build configs for different branches
 for:
@@ -19,6 +18,8 @@ for:
       - master
   environment:
     NODE_ENV: production
+  install:
+    - cmd: npm ci --only=production
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
@@ -30,7 +31,8 @@ for:
       - /feature*/
   environment:
     NODE_ENV: stage
-  before_build:
+  install:
+    - cmd: npm ci --only=production
     - cmd: git clone https://github.com/strawbees/code-ui.git
     - cmd: cd code-ui
     - cmd: git checkout develop
