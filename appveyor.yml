@@ -5,11 +5,10 @@ platform:
   - x86
   - x64
 
-install:
+init:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - cinst -y nsis
   - SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
-  - npm ci --only=production
 
 # defined specific build configs for different branches
 for:
@@ -50,7 +49,7 @@ for:
   environment:
     NODE_ENV: stage
   build_script:
-    - cmd: npm install
+    - cmd: npm ci --production
     - cmd: npm run move-ui-stage
     - cmd: npm run bundle
     - cmd: npm run package
