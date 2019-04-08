@@ -1,6 +1,6 @@
 {
 	"name": "strawbeescode",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"display-name": "Strawbees CODE",
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
@@ -10,11 +10,18 @@
 	"autoupdate": {
 		"stage": "https://s3.amazonaws.com/strawbees-downloads-stage/code-nwjs-build/versions",
 		"prodcution": "https://s3.amazonaws.com/strawbees-downloads-production/code-nwjs-build/versions",
-		"dev": "http://localhost:8080/"
+		"dev": "http://localhost:8080"
+	},
+	"driver": {
+		"url": "https://github.com/strawbees/quirkbot-driver/releases/download/v2.0.0.0/Quirkbot-Windows-Drivers-Installer-v2.0.0.0.exe",
+		"filename": "Quirkbot-Windows-Driver-Installer.exe"
 	},
 	"main": "ui/index.html",
+	"node-main": "main.js",
+	"inject_js_start": "inject_js_start.js",
 	"dependencies": {
-		"nw": "^0.36.2"
+		"@strawbees/desktop-autoupdater": "^0.1.0",
+		"strawbees-code-compiler-service": "1.0.1"
 	},
 	"window": {
 		"title": "Strawbees CODE",
