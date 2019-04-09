@@ -14,4 +14,8 @@ branches:
   only:
     - master
     - develop
-    - /feature*/
+    - feature/macos-build
+addons:
+  artifacts:
+    paths: ./dist/versions
+    debug: true
