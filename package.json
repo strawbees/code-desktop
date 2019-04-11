@@ -16,7 +16,7 @@
     "license": "MIT",
     "dependencies": {
         "@strawbees/code-ui": "^1.4.0",
-        "@strawbees/desktop-packager": "git+https://github.com/strawbees/desktop-packager.git#feature/macos-build"
+        "@strawbees/desktop-packager": "^0.4.0"
     },
     "devDependencies": {
         "nw": "0.34.4-sdk"
