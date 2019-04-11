@@ -3,18 +3,38 @@ node_js:
 - '11.2.0'
 os:
 - osx
-install:
-- npm ci --only=production
 cache:
-  directories:
-  - "$HOME/.npm"
-script:
-- npm run build
+    directories:
+        - "$HOME/.npm"
 branches:
-  only:
-    - master
-    - develop
-    - feature/macos-build
+    only:
+        - master
+        - develop
+        - feature/macos-build
+jobs:
+    include:
+        - if: branch = master
+          install:
+            - npm ci --only=production
+          script:
+            - npm run move-ui-production
+            - npm run build
+        - if: branch = develop OR branch =~ ^feature
+          install:
+            - npm ci --only=production
+            - npm run move-ui-production
+            - git clone https://github.com/strawbees/code-ui.git
+            - cd code-ui
+            - git checkout develop
+            - npm install
+            - npm link
+            - cd ..
+            - npm link "@strawbees/code-ui"
+          script:
+            - CONFIG=desktop_stage npm run build-ui
+            - npm run move-ui-stage
+            - npm run build
+
 addons:
   artifacts:
     paths: ./dist/versions
