@@ -34,6 +34,8 @@ npm run move-ui-production
 npm build
 ```
 
+**Note**: Bump version on `src/package.json`.
+
 ## Signing and Deploying
 
 TODO
