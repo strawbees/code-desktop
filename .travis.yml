@@ -6,10 +6,6 @@ os:
 cache:
     directories:
         - "$HOME/.npm"
-branches:
-    only:
-        - master
-        - develop
 jobs:
     include:
         - if: branch = master
