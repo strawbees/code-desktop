@@ -1,6 +1,4 @@
 {
-    "name": "code-desktop",
-    "description": "Desktop application for Strawbees CODE",
     "scripts": {
         "postinstall": "npm run install-src",
         "install-src": "cd src && npm install",
@@ -16,7 +14,7 @@
     "license": "MIT",
     "dependencies": {
         "@strawbees/code-ui": "1.4.0",
-        "@strawbees/desktop-packager": "0.5.1"
+        "@strawbees/desktop-packager": "0.5.2"
     },
     "devDependencies": {
         "nw": "0.34.4-sdk"

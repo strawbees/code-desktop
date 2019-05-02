@@ -1,12 +1,13 @@
 {
-	"name": "strawbeescode",
+	"name": "code-desktop",
 	"version": "2.1.0",
 	"display-name": "Strawbees CODE",
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
 	"url-scheme": "strawbeescode",
 	"nwjs-version": "0.34.4",
-	"description": "",
+	"description": "Desktop application for Strawbees CODE",
+	"license": "MIT",
 	"autoupdate": {
 		"stage": "https://s3.amazonaws.com/strawbees-downloads-stage/code-nwjs-build/versions",
 		"prodcution": "https://s3.amazonaws.com/strawbees-downloads-production/code-nwjs-build/versions",
