@@ -19,8 +19,19 @@ The last step is to move which UI the app should load and it can be done with `n
 Finally run `npm start` to run the app.
 
 ```bash
-npm install --nwjs_build_type=sdk
+npm install
 npm run move-ui-stage
+npm start
+```
+
+To run a local version of the ui, first follow the instructions to setup [`code-ui`](https://github.com/strawbees/code-ui) and build locally. Then "link" it by runing `npm link` at the root of **`code-ui`**.
+
+After that, run the following commands on the root of **`code-desktop`** repository:
+
+```bash
+npm install
+npm link @strawbees/code-ui
+npm run move-ui-develop
 npm start
 ```
 
