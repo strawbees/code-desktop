@@ -13,11 +13,10 @@ jobs:
             - npm ci --only=production
           script:
             - npm run move-ui-production
-            - npm run build
+            - NODE_ENV=production npm run build
         - if: branch = develop OR branch =~ ^feature
           install:
-            - npm ci --only=production
-            - npm run move-ui-production
+            - npm ci
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
             - git checkout develop
@@ -27,8 +26,8 @@ jobs:
             - npm link "@strawbees/code-ui"
           script:
             - CONFIG=desktop_stage npm run build-ui
-            - npm run move-ui-stage
-            - npm run build
+            - npm run move-ui-develop
+            - NODE_ENV=develop npm run build
 
 addons:
   artifacts:
