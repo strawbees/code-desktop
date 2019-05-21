@@ -29,10 +29,12 @@ npm start
 Make sure you have removed the folders `node_modules` and `src/node_modules` and install the dependencies again but specifying the environment you are building for:
 
 ```bash
-npm install --production --nwjs_build_type=normal
+npm install
 npm run move-ui-production
-npm build
+NODE_ENV=production npm build
 ```
+
+**Note**: Bump version on `src/package.json`.
 
 ## Signing and Deploying
 
