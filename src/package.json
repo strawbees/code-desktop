@@ -22,7 +22,7 @@
 	"inject_js_start": "inject_js_start.js",
 	"dependencies": {
 		"@strawbees/desktop-autoupdater": "^0.1.0",
-		"strawbees-code-compiler-service": "1.0.1"
+		"@strawbees/code-compiler-service": "1.0.2"
 	},
 	"window": {
 		"title": "Strawbees CODE",
