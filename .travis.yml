@@ -26,8 +26,8 @@ jobs:
             - npm link "@strawbees/code-ui"
           script:
             - CONFIG=desktop_stage npm run build-ui
-            - npm run move-ui-stage
-            - NODE_ENV=develop npm run build
+            - npm run move-ui-develop
+            - NODE_ENV=stage npm run build
 
 addons:
   artifacts:
