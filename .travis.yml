@@ -27,7 +27,7 @@ jobs:
           script:
             - CONFIG=desktop_stage npm run build-ui
             - npm run move-ui-stage
-            - NODE_ENV=develop npm run build
+            - NODE_ENV=stage npm run build
 
 addons:
   artifacts:
