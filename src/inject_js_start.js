@@ -6,7 +6,10 @@ process.env.COMPILER_PORT = 9511
 const compilerProcess = fork(
 	require.resolve('@strawbees/code-compiler-service/app.js'),
 	[],
-	{ silent : true }
+	{
+		silent : false,
+		stdio: 'pipe'
+	}
 )
 compilerProcess.stdout.on('data', data =>
 	console.log(`COMPILER stdout: ${data}`)
