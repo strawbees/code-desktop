@@ -1,7 +1,7 @@
 {
     "scripts": {
         "postinstall": "npm run install-src",
-        "install-src": "cd src && npm install",
+        "install-src": "cd src && rm -rf node_modules && npm install",
         "build-ui": "strawbees-code-ui-build",
         "move-ui-develop": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/ui -o ./src/ui",
         "move-ui-stage": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_stage/ui -o ./src/ui",
