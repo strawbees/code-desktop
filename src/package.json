@@ -8,8 +8,8 @@
 	"nwjs-version": "0.39.2",
 	"description": "Desktop application for Strawbees CODE",
 	"nwjsBuilder": {
-		"productName" : "Strawbees CODE",
-		"bundleIdentifier" : "com.strawbees.code-desktop"
+		"productName": "Strawbees CODE",
+		"bundleIdentifier": "com.strawbees.code-desktop"
 	},
 	"window": {
 		"title": "Strawbees CODE",
