@@ -6,6 +6,18 @@ process.on('SIGINT', () => process.exit()) // catch ctrl-c
 process.on('SIGTERM', () => process.exit()) // catch kill
 
 /**
+ * Setup the compiler
+ * Defines a function on the exports, so that the render process (inject_js_start.js),
+ * wich has access to window.nw.App.dataPath, can trigger it, passing the correct
+ * data path.
+ */
+exports.startCompiler = (dataPath) => {
+	process.env.COMPILER_ROOT_DIR = dataPath
+	process.env.COMPILER_PORT = 9511
+	require('@strawbees/code-compiler-service/app')
+}
+
+/**
  * Display a popup notification saying there is an update available. It returns
  * a promise that resolves if notification is clicked and rejects after a
  * timout or if notification is closed
