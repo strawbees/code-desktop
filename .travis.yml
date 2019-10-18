@@ -10,13 +10,13 @@ jobs:
     include:
         - if: branch = master
           install:
-            - npm ci --only=production
+            - npm install --only=production
           script:
             - npm run move-ui-production
             - NODE_ENV=production npm run build
         - if: branch = develop OR branch =~ ^feature
           install:
-            - npm ci
+            - npm install
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
             - git checkout develop

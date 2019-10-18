@@ -40,13 +40,27 @@ npm start
 Make sure you have removed the folders `node_modules` and `src/node_modules` and install the dependencies again but specifying the environment you are building for:
 
 ```bash
-npm install
+npm install --only=production
 npm run move-ui-production
-NODE_ENV=production npm build
+NODE_ENV=production npm run build
 ```
 
 **Note**: Bump version on `src/package.json`.
 
 ## Signing and Deploying
+
+### OSX
+
+```bash
+# Clean up files
+rm -rf node_modules
+rm -rf src/node_modules
+rm -rf src/ui
+# Install and build
+npm install --only=production
+npm run move-ui-production
+NODE_ENV=production npm run bundle
+NODE_ENV=production npm run package
+```
 
 TODO
