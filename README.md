@@ -18,7 +18,7 @@ The last step is to move which UI the app should load and it can be done with `n
 
 Finally run `npm start` to run the app.
 
-```bash
+```shell
 npm install
 npm run move-ui-stage
 npm start
@@ -28,7 +28,7 @@ To run a local version of the ui, first follow the instructions to setup [`code-
 
 After that, run the following commands on the root of **`code-desktop`** repository:
 
-```bash
+```shell
 npm install
 npm link @strawbees/code-ui
 npm run move-ui-develop
@@ -39,7 +39,7 @@ npm start
 
 Make sure you have removed the folders `node_modules` and `src/node_modules` and install the dependencies again but specifying the environment you are building for:
 
-```bash
+```shell
 npm install --only=production
 npm run move-ui-production
 NODE_ENV=production npm run build
@@ -51,16 +51,42 @@ NODE_ENV=production npm run build
 
 ### OSX
 
-```bash
-# Clean up files
+##### *ATTENTION! Requires Node 11! (Due to some strange issue in macos-alias)*
+```shell
+nvm use 11
+```
+##### Clean up files
+```shell
 rm -rf node_modules
 rm -rf src/node_modules
 rm -rf src/ui
-# Install and build
+```
+##### Install and build
+```shell
 npm install --only=production
 npm run move-ui-production
 NODE_ENV=production npm run bundle
-NODE_ENV=production npm run package
 ```
-
-TODO
+##### Sign the app
+```shell
+export APPLE_DEVELOPER_IDENTITY=<apple_developer_id_application>
+npm run sign
+```
+##### Package and notarize
+1. Generate an app-specific password (https://support.apple.com/en-us/HT204397).
+2. Figure you your provider with (shortname):
+```shell
+xcrun altool --list-providers -u <apple_id_email> -p <app_specific_password>
+```
+3. Run the package command
+```shell
+export APPLE_DEVELOPER_USERNAME=<apple_id_email>
+export APPLE_DEVELOPER_PASSWORD=<app_specific_password>
+export APPLE_DEVELOPER_PROVIDER=<provider>
+export NODE_ENV=production
+npm run package
+```
+If there's a problem with the provider, it will fail with a message like this:
+```
+Your Apple ID account is attached to other iTunes providers. You will need to specify which provider you intend to submit content to by using the -itc_provider command. Please contact us if you have questions or need help. (1627)
+```
