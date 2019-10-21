@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 KEY_CHAIN=build.keychain
 CERTIFICATE_P12=certificate.p12
 
@@ -19,5 +18,4 @@ security import $CERTIFICATE_P12 -k $KEY_CHAIN -P $APPLE_CERTIFICATE_P12_PASSWOR
 
 security set-key-partition-list -S apple-tool:,apple: -s -k travis $KEY_CHAIN
 
-# remove certs
-rm -fr *.p12
+echo "Certificates are setup"
