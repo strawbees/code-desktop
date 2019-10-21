@@ -1,5 +1,5 @@
 .DS_Store
-release.darwin.sh
+/release.darwin.*.sh
 node_modules
 dist
 src/ui
