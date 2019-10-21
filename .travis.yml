@@ -11,6 +11,7 @@ jobs:
         - if: branch = master
           install:
             - npm install
+            - sh .travis.certificate.sh
           script:
             - npm run move-ui-production
             - npm run bundle
@@ -27,6 +28,7 @@ jobs:
             - npm link
             - cd ..
             - npm link "@strawbees/code-ui"
+            - sh .travis.certificate.sh
           script:
             - export CONFIG=desktop_stage
             - npm run build-ui
