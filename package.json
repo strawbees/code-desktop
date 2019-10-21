@@ -11,12 +11,14 @@
         "package:only": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist ",
         "package:notarize": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist --notarize 1",
         "publish:darwin": "strawbees-s3-publisher -s ./dist/versions/darwin/x64 -d code-desktop/darwin/x64/",
+        "local:release:darwin:stage": "sh ./release.darwin.stage.sh",
+        "local:release:darwin:production": "sh ./release.darwin.production.sh",
         "start": "nw src"
     },
     "license": "MIT",
     "dependencies": {
-        "@strawbees/code-ui": "1.6.0",
-        "@strawbees/desktop-packager": "0.7.3",
+        "@strawbees/code-ui": "1.6.1",
+        "@strawbees/desktop-packager": "0.7.4",
         "@strawbees/s3-publisher": "0.1.5"
     },
     "devDependencies": {
