@@ -21,7 +21,6 @@ jobs:
             - npm run publish:darwin
         - if: branch = develop OR branch =~ ^feature
           install:
-            - sh .travis.certificate.sh
             - npm install
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
@@ -36,6 +35,5 @@ jobs:
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
-            - npm run sign
-            - npm run package:notarize
+            - npm run package:only
             - npm run publish:darwin
