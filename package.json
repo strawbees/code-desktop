@@ -9,7 +9,7 @@
         "bundle": "strawbees-desktop-packager-bundle -s ./src -o ./dist",
         "sign": "strawbees-desktop-packager-sign -s ./dist/bundle",
         "package:only": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist ",
-        "package:notarize": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist --notarize",
+        "package:notarize": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist --notarize 1",
         "publish:darwin": "strawbees-s3-publisher -s ./dist/versions/darwin/x64 -d code-desktop/darwin/x64/",
         "start": "nw src"
     },
