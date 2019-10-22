@@ -10,7 +10,6 @@ init:
   - cmd: cinst -y nsis
   - cmd: SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
 
-# defined specific build configs for different branches
 for:
 -
   branches:
