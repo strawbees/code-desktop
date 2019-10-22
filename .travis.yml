@@ -18,7 +18,7 @@ jobs:
             - npm run bundle
             - npm run sign
             - npm run package:notarize
-            - npm run publish:darwin
+            - npm run publish
         - if: branch = develop OR branch =~ ^feature
           install:
             - npm install --only=production
@@ -36,4 +36,4 @@ jobs:
             - export NODE_ENV=stage
             - npm run bundle
             - npm run package:only
-            - npm run publish:darwin
+            - npm run publish

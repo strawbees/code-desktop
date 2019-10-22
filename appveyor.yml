@@ -23,7 +23,9 @@ for:
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
+    - cmd: npm run sign
     - cmd: npm run package:only
+    - cmd: npm run punlish
 -
   branches:
     only:
@@ -46,10 +48,6 @@ for:
     - cmd: npm run move-ui-develop
     - cmd: npm run bundle
     - cmd: npm run package:only
-
-artifacts:
-  - path: dist\versions\**\*
-    name: build
 
 version: "{build}"
 
