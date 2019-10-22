@@ -25,7 +25,6 @@ for:
     - cmd: npm run bundle
     - cmd: npm run sign
     - cmd: npm run package:only
-    - cmd: npm run punlish
 -
   branches:
     only:
@@ -48,6 +47,7 @@ for:
     - cmd: npm run move-ui-develop
     - cmd: npm run bundle
     - cmd: npm run package:only
+    - cmd: npm run publish
 
 version: "{build}"
 
