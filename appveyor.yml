@@ -47,6 +47,7 @@ for:
     - cmd: npm run move-ui-develop
     - cmd: npm run bundle
     - cmd: npm run package:only
+    - cmd: set S3_BUCKET=strawbees-downloads-stage
     - cmd: npm run publish
 
 version: "{build}"
