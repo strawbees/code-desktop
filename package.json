@@ -9,8 +9,8 @@
         "bundle": "strawbees-desktop-packager-bundle -s ./src -o ./dist",
         "sign": "strawbees-desktop-packager-sign -s ./dist/bundle",
         "package:only": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist ",
-        "package:notarize": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist --notarize 1",
-        "publish:darwin": "strawbees-s3-publisher -s ./dist/versions/darwin/x64 -d code-desktop/darwin/x64/",
+        "package:notarize": "strawbees-desktop-packager-package -s ./dist/bundle -o ./dist --notarize",
+        "publish": "strawbees-desktop-packager-publish -s ./dist/versions -o code-desktop",
         "local:release:darwin:stage": "sh ./release.darwin.stage.sh",
         "local:release:darwin:production": "sh ./release.darwin.production.sh",
         "start": "nw src"
@@ -18,8 +18,7 @@
     "license": "MIT",
     "dependencies": {
         "@strawbees/code-ui": "1.6.1",
-        "@strawbees/desktop-packager": "0.7.4",
-        "@strawbees/s3-publisher": "0.1.5"
+        "@strawbees/desktop-packager": "0.7.4"
     },
     "devDependencies": {
         "nw": "0.41.3-sdk"
