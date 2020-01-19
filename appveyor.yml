@@ -10,7 +10,6 @@ init:
   - cmd: cinst -y nsis
   - cmd: SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
 
-# defined specific build configs for different branches
 for:
 -
   branches:
@@ -19,13 +18,12 @@ for:
   environment:
     NODE_ENV: production
   install:
-    - cmd: npm install --only=production
+    - cmd: npm ci --only=production
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
     - cmd: npm run sign
     - cmd: npm run package:only
-    - cmd: npm run punlish
 -
   branches:
     only:
@@ -34,7 +32,7 @@ for:
   environment:
     NODE_ENV: stage
   install:
-    - cmd: npm install --only=production
+    - cmd: npm ci --only=production
     - cmd: git clone https://github.com/strawbees/code-ui.git
     - cmd: cd code-ui
     - cmd: git checkout develop
@@ -48,6 +46,8 @@ for:
     - cmd: npm run move-ui-develop
     - cmd: npm run bundle
     - cmd: npm run package:only
+    - cmd: set S3_BUCKET=strawbees-downloads-stage
+    - cmd: npm run publish
 
 version: "{build}"
 

@@ -12,7 +12,7 @@ jobs:
         - if: branch = master
           install:
             - sh .travis.certificate.sh
-            - npm install --only=production
+            - npm ci --only=production
           script:
             - npm run move-ui-production
             - npm run bundle
@@ -21,7 +21,7 @@ jobs:
             - npm run publish
         - if: branch = develop OR branch =~ ^feature
           install:
-            - npm install --only=production
+            - npm ci --only=production
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
             - git checkout develop
