@@ -18,7 +18,7 @@ for:
   environment:
     NODE_ENV: production
   install:
-    - cmd: npm install --only=production
+    - cmd: npm ci --only=production
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
@@ -32,7 +32,7 @@ for:
   environment:
     NODE_ENV: stage
   install:
-    - cmd: npm install --only=production
+    - cmd: npm ci --only=production
     - cmd: git clone https://github.com/strawbees/code-ui.git
     - cmd: cd code-ui
     - cmd: git checkout develop
