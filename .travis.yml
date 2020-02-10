@@ -11,9 +11,11 @@ jobs:
     include:
         - if: branch = master
           install:
+            - set -e
             - sh .travis.certificate.sh
             - npm ci --only=production
           script:
+            - set -e
             - npm run move-ui-production
             - npm run bundle
             - npm run sign
@@ -21,6 +23,7 @@ jobs:
             - npm run publish
         - if: branch = develop OR branch =~ ^feature
           install:
+            - set -e
             - npm ci --only=production
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
@@ -32,6 +35,7 @@ jobs:
             - export CONFIG=desktop_stage
             - npm run build-ui
           script:
+            - set -e
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
