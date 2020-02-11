@@ -35,7 +35,7 @@
 	"inject_js_start": "inject_js_start.js",
 	"dependencies": {
 		"@strawbees/desktop-autoupdater": "^0.1.1",
-		"@strawbees/code-compiler-service": "1.0.6"
+		"@strawbees/code-compiler-service": "1.0.7"
 	},
 	"license": "MIT"
 }
