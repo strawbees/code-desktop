@@ -22,7 +22,6 @@ for:
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
-    - cmd: npm run sign
     - cmd: npm run package:only
 -
   branches:
