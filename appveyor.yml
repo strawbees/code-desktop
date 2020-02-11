@@ -49,6 +49,10 @@ for:
     - cmd: set S3_BUCKET=strawbees-downloads-stage
     - cmd: npm run publish
 
+artifacts:
+  - path: dist\versions\**\*
+    name: build
+
 version: "{build}"
 
 skip_tags: true
