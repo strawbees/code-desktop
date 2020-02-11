@@ -14,6 +14,7 @@ jobs:
             - sh .travis.certificate.sh
             - npm ci --only=production
           script:
+            - set -e
             - npm run move-ui-production
             - npm run bundle
             - npm run sign
@@ -33,6 +34,7 @@ jobs:
             - export CONFIG=desktop_stage
             - npm run build-ui
           script:
+            - set -e
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
