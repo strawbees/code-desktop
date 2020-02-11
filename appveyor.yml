@@ -22,7 +22,6 @@ for:
   build_script:
     - cmd: npm run move-ui-production
     - cmd: npm run bundle
-    - cmd: npm run sign
     - cmd: npm run package:only
 -
   branches:
@@ -48,6 +47,10 @@ for:
     - cmd: npm run package:only
     - cmd: set S3_BUCKET=strawbees-downloads-stage
     - cmd: npm run publish
+
+artifacts:
+  - path: dist\versions\**\*
+    name: build
 
 version: "{build}"
 
