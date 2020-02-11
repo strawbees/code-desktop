@@ -49,7 +49,7 @@ npm run bundle
 ```shell
 rm -rf node_modules
 rm -rf src/ui
-npm ci --only=production
+npm install --only=production
 npm run move-ui-production
 NODE_ENV=production npm run bundle
 ```
