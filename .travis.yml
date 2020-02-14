@@ -36,6 +36,5 @@ jobs:
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
-            - npm run sign
             - npm run package:only
             - npm run publish
