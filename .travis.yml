@@ -3,7 +3,7 @@ node_js:
 - '11.2.0'
 os:
 - osx
-osx_image: xcode11.2
+osx_image: xcode11.1
 cache:
     directories:
         - "$HOME/.npm"
@@ -36,6 +36,5 @@ jobs:
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
-            - npm run sign
             - npm run package:only
             - npm run publish

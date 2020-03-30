@@ -35,21 +35,30 @@ npm run move-ui-develop
 npm start
 ```
 
-## Building
-
-Make sure you have removed the folders `node_modules` and `src/node_modules` and install the dependencies again but specifying the environment you are building for:
-
+## Bundling
+### Windows
 ```shell
+set NODE_ENV=production
+rm -rf node_modules
+rm -rf src/ui
+npm ci --only=production
+npm run move-ui-production
+npm run bundle
+```
+### macOS
+```shell
+rm -rf node_modules
+rm -rf src/ui
 npm install --only=production
 npm run move-ui-production
-NODE_ENV=production npm run build
+NODE_ENV=production npm run bundle
 ```
 
 **Note**: Bump version on `src/package.json`.
 
 ## Signing and Deploying
 
-### OSX
+### macOS
 
 ##### *ATTENTION! Requires Node 11! (Due to some strange issue in macos-alias)*
 ```shell
@@ -58,12 +67,11 @@ nvm use 11
 ##### Clean up files
 ```shell
 rm -rf node_modules
-rm -rf src/node_modules
 rm -rf src/ui
 ```
-##### Install and build
+##### Install and bundle
 ```shell
-npm install --only=production
+npm ci --only=production
 npm run move-ui-production
 NODE_ENV=production npm run bundle
 ```

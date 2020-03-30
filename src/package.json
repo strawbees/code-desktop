@@ -1,6 +1,6 @@
 {
 	"name": "strawbeescode",
-	"version": "2.2.6",
+	"version": "2.3.0",
 	"display-name": "Strawbees CODE",
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
@@ -22,8 +22,8 @@
 		"icon": "nwjs-assets/icon.png"
 	},
 	"autoupdate": {
-		"stage": "https://s3.amazonaws.com/strawbees-downloads-stage/code-desktop",
-		"production": "https://s3.amazonaws.com/strawbees-downloads-production/code-desktop",
+		"stage": "https://strawbees-downloads-stage.s3.amazonaws.com/code-desktop",
+		"production": "https://downloads.strawbees.com/code-desktop",
 		"dev": "http://localhost:8080"
 	},
 	"driver": {
