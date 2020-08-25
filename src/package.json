@@ -5,7 +5,7 @@
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
 	"url-scheme": "strawbeescode",
-	"nwjs-version": "0.43.6",
+	"nwjs-version": "0.47.3",
 	"description": "Desktop application for Strawbees CODE",
 	"nwjsBuilder": {
 		"productName": "Strawbees CODE",
