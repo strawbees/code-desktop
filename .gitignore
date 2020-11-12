@@ -1,6 +1,8 @@
 .DS_Store
 /release.darwin.*.sh
 !/release.darwin.*.example.sh
+/release.win32.*.ps1
+!/release.win32.*.example.ps1
 node_modules
 dist
 src/ui

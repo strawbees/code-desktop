@@ -1,6 +1,6 @@
 {
 	"name": "strawbeescode",
-	"version": "2.6.2",
+	"version": "2.6.3",
 	"display-name": "Strawbees CODE",
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
@@ -13,10 +13,9 @@
 	},
 	"window": {
 		"title": "Strawbees CODE",
-		"toolbar": true,
 		"frame": true,
-		"width": 1100,
-		"height": 620,
+		"width": 1400,
+		"height": 750,
 		"min_width": 700,
 		"min_height": 400,
 		"icon": "nwjs-assets/icon.png"
