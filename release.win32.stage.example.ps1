@@ -11,6 +11,10 @@ npm run move-ui-stage
 SET NODE_ENV=stage
 npm run bundle
 
+# Package
+SET NODE_ENV=stage
+npm run package:only
+
 # Sign
 $title    = 'Codesign'
 $question = 'Please codesgin the bundle before proceeding.'
@@ -22,10 +26,6 @@ if ($decision -eq 0) {
 	Write-Host 'Cannot do release without signing.'
 	exit 1
 }
-
-# Package
-SET NODE_ENV=stage
-npm run package:only
 
 # Publish
 SET S3_KEY=???????????????????
