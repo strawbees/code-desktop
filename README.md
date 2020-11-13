@@ -58,7 +58,37 @@ NODE_ENV=production npm run bundle
 
 ## Signing and Deploying
 
+### Windows
+It's much easier to download the pre-compiled binaries for Windows, than trying to build yourself, since you will need to build for both 32 and 64 bits and for that you would need 2 machines.
+
+##### Download pre-built  binaries
+- Sign-in to AWS
+- Open [this url](https://s3.console.aws.amazon.com/s3/buckets/strawbees-appveyor-builds?region=us-east-1&prefix=code-desktop/win32/) (in case you need, the name of the bucket is `strawbees-appveyor-builds`).
+- Download the latest binaries for both `x64` and `ia32`. Place them in a location that the signing virtual machine has access to.
+- The best will be for you to create two folders: `ia32` and `x64`, and place the files in it. Also add the respective `latest.json` and `Strawbees CODE-win32-XXXX.X.X.X-src.zip`. Having these files togehter will make it easier to deploy it to AWS later.
+
+##### Codesign the binaries
+- Start the signing VM.
+- Plug in the hardware token, make sure the VM can access the USB device.
+- Open  `DigiCertUtil.exe` (icon on desktop).
+- Login at the "Account" tab. (credentials in password manager)
+	- If you get error `500-2f8f`, add the following entry to the hosts file (`C:\Windows\System32\drivers\etc\hosts`): `64.78.193.234 www.digicert.com`
+- Click on the "Code Signing" tab, then click on the valid certificate. Then click on "Sign files", and find the .exe binaries.
+- Add the token password. (credentials in password manager)
+- Files are ready to be uploaded.
+
+##### Upload to AWS
+
+- You will need to upload the `latest.json`, the `Strawbees CODE-win32-XXXX.X.X.X-src.zip` and the `Strawbees CODE-win32-XXXX.X.X.X.exe` to the 2 platforms, `ia32` and `x64`.
+- Find the correct bucket and place the files in:
+	- `/code-desktop/versions/win32/ia32`
+	- `/code-desktop/versions/win32/x64`
+- Upload manually via AWS. *Make sure* to tick the "Everyone (public access) > Objects > Read", under "Aditional Upload Options > Access control list (ACL)".
+
 ### macOS
+
+The easiest thing is to use the `release.darwin.production.example.sh` if you have one.
+But bellow are the steps performed by that script
 
 ##### *ATTENTION! Requires Node 11! (Due to some strange issue in macos-alias)*
 ```shell
@@ -97,4 +127,12 @@ npm run package
 If there's a problem with the provider, it will fail with a message like this:
 ```
 Your Apple ID account is attached to other iTunes providers. You will need to specify which provider you intend to submit content to by using the -itc_provider command. Please contact us if you have questions or need help. (1627)
+```
+
+##### Publish on AWS
+```shell
+export S3_KEY="???????????????????"
+export S3_SECRET="??????????????????????????????????"
+export S3_BUCKET="strawbees-downloads-production"
+npm run publish
 ```
