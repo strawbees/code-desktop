@@ -1,4 +1,6 @@
 # Strawbees CODE Desktop app
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fstrawbees%2Fcode-desktop.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fstrawbees%2Fcode-desktop?ref=badge_shield)
+
 
 This app is intended to a version of [Strawbees CODE](https://code.strawbees.com) that can be used offline.
 
@@ -98,3 +100,7 @@ If there's a problem with the provider, it will fail with a message like this:
 ```
 Your Apple ID account is attached to other iTunes providers. You will need to specify which provider you intend to submit content to by using the -itc_provider command. Please contact us if you have questions or need help. (1627)
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fstrawbees%2Fcode-desktop.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fstrawbees%2Fcode-desktop?ref=badge_large)
