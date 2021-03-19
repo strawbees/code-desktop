@@ -21,6 +21,6 @@
         "@strawbees/desktop-packager": "0.7.14"
     },
     "devDependencies": {
-        "nw": "0.47.3-sdk"
+        "nw": "0.52.0-sdk"
     }
 }
