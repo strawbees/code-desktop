@@ -3,7 +3,7 @@
         "postinstall": "npm run install-src",
         "install-src": "cd src && rm -rf node_modules && npm ci --only=production",
         "build-ui": "strawbees-code-ui-build",
-        "move-ui-develop": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/ui -o ./src/ui",
+        "move-ui-develop": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out -o ./src/ui",
         "move-ui-stage": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_stage/ui -o ./src/ui",
         "move-ui-production": "strawbees-desktop-packager-cpdir -s ./node_modules/@strawbees/code-ui/out/desktop_production/ui -o ./src/ui",
         "bundle": "strawbees-desktop-packager-bundle -s ./src -o ./dist",
