@@ -1,11 +1,11 @@
 {
 	"name": "strawbeescode",
-	"version": "2.6.3",
+	"version": "2.6.5",
 	"display-name": "Strawbees CODE",
 	"executable-name": "Strawbees CODE",
 	"publisher": "Strawbees AB",
 	"url-scheme": "strawbeescode",
-	"nwjs-version": "0.47.3",
+	"nwjs-version": "0.52.1",
 	"description": "Desktop application for Strawbees CODE",
 	"nwjsBuilder": {
 		"productName": "Strawbees CODE",
@@ -33,8 +33,8 @@
 	"node-main": "main.js",
 	"inject_js_start": "inject_js_start.js",
 	"dependencies": {
-		"@strawbees/desktop-autoupdater": "^0.1.1",
-		"@strawbees/code-compiler-service": "1.2.4"
+		"@strawbees/code-compiler-service": "1.4.1",
+		"@strawbees/desktop-autoupdater": "^0.1.1"
 	},
 	"license": "MIT"
 }

@@ -17,10 +17,10 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@strawbees/code-ui": "1.11.2",
+        "@strawbees/code-ui": "1.12.2",
         "@strawbees/desktop-packager": "0.7.14"
     },
     "devDependencies": {
-        "nw": "0.47.3-sdk"
+        "nw": "0.52.1-sdk"
     }
 }
