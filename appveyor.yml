@@ -1,5 +1,5 @@
 environment:
-  nodejs_version: 15.13.0
+  nodejs_version: 15
 
 platform:
   - x86
