@@ -31,9 +31,9 @@ jobs:
             - npm link
             - cd $TRAVIS_BUILD_DIR
             - npm link "@strawbees/code-ui"
-          script:
             - export CONFIG=desktop_stage
             - npm run build-ui
+          script:
             - npm run move-ui-develop
             - export NODE_ENV=stage
             - npm run bundle
