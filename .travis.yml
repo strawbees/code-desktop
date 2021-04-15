@@ -4,9 +4,6 @@ node_js:
 os:
 - osx
 osx_image: xcode11.1
-cache:
-    directories:
-        - "$HOME/.npm"
 jobs:
     include:
         - if: branch = master
