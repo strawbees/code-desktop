@@ -27,7 +27,7 @@ jobs:
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
             - git checkout develop
-            - npm install
+            - npm ci
             - npm link
             - cd $TRAVIS_BUILD_DIR
             - npm link "@strawbees/code-ui"

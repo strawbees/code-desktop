@@ -37,7 +37,7 @@ for:
     - cmd: git clone https://github.com/strawbees/code-ui.git
     - cmd: cd code-ui
     - cmd: git checkout develop
-    - cmd: npm install
+    - cmd: npm ci
     - cmd: npm link
     - cmd: cd %APPVEYOR_BUILD_FOLDER%
     - cmd: npm link "@strawbees/code-ui"
