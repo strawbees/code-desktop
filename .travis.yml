@@ -4,9 +4,6 @@ node_js:
 os:
 - osx
 osx_image: xcode11.1
-cache:
-    directories:
-        - "$HOME/.npm"
 jobs:
     include:
         - if: branch = master
@@ -23,12 +20,13 @@ jobs:
           install:
             - sh .travis.certificate.sh
             - npm ci --only=production
+            - cd /tmp
             - git clone https://github.com/strawbees/code-ui.git
             - cd code-ui
             - git checkout develop
-            - npm install
+            - npm ci
             - npm link
-            - cd ..
+            - cd $TRAVIS_BUILD_DIR
             - npm link "@strawbees/code-ui"
             - export CONFIG=desktop_stage
             - npm run build-ui
