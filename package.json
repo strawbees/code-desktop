@@ -17,7 +17,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@strawbees/code-ui": "1.12.2",
+        "@strawbees/code-ui": "1.13.1",
         "@strawbees/desktop-packager": "0.7.14"
     },
     "devDependencies": {
